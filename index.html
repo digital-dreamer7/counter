@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url(images/galaxy.jpg);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            font-weight: bold;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border: 1px solid gray;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px black;
+            transition: all 400ms;
+        }
+        .btn:hover {
+            box-shadow: 0px 0px 30px black;
+        }
+
+        .decrease-btn {
+
+            background-color: red;
+
+        }
+
+
+        .increase-btn {
+
+            background-color: rgb(0, 255, 0);
+
+        }
+
+        #counter-text {
+            display: inline-flex;
+            padding: auto 10px;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            margin: auto 20px;
+            color: white;
+        }
+
+        .cntr-sctn {
+            display: flex;
+        }
+
+        .reset {
+            margin-top: 20px;
+            background-color: bisque;
+            border: 1px solid goldenrod;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 8px 16px;
+            border-radius: 16px;
+
+        }
+
+        .name {
+            color: black;
+            background-color: rgb(226, 226, 227);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .counter {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #0000FF;
+            border-radius: 50%;
+            border: 4px solid whitesmoke;
+            outline: 4px solid #0000FF;
+            box-shadow: 0px 0px 30px 5px red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="name"> THASBEEH COUNTER </h1>
+        <div class="counter">
+
+        <div class="cntr-sctn">
+            <button class="decrease-btn btn" onclick="decrease()">−</button>
+            <span id="counter-text">0</span>
+            <button class="increase-btn btn" onclick="increase()">+</button>
+        </div>
+
+        <button class="reset" onclick="reset()">RESET COUNTER</button>
+</div>
+    </div>
+    <script>
+        var count = 0;
+        function increase() {
+            count++
+            document.getElementById("counter-text").innerHTML = count;
+        }
+        function decrease() {
+            if (count > 0) {
+                count--
+                document.getElementById("counter-text").innerHTML = count;
+            }
+        }
+        function reset() {
+            count = 0;
+            document.getElementById("counter-text").innerHTML = count;
+        }
+    </script>
+</body>
+
+</html>
